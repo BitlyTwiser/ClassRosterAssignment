@@ -84,8 +84,8 @@ class Student {
       degreeProgram = dp;
     };
 
-    void print() {
-
+    void print(string studentId) {
+      cout << studentId << endl;
     };
 
 };
