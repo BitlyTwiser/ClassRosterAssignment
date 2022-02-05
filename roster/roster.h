@@ -6,6 +6,7 @@
 class Roster 
 {
 	public:
+		const char *classRosterArray[5];
 		Roster();
 };
 
