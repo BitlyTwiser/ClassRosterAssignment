@@ -8,7 +8,9 @@ class Roster
 {
 	public:
 		vector<Student*> classRosterVector;
-		Roster(){};
+		Roster(){
+			setclassRosterVector();
+		};
 		~Roster(){
 			// Remove all elements from classRosterVector on deconstruction.
 			for(int i = 0; i< classRosterVector.size();i++){

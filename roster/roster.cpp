@@ -8,7 +8,9 @@ void Roster::remove(string studentId) {
 };
 
 void Roster::printAll() {
-
+  for(int i = 0;i<Roster::classRosterVector.size();i++){
+    classRosterVector[i]->print();
+  }
 };
 
 void Roster::printAverageDaysInCourse(string studentId) {
@@ -31,6 +33,4 @@ void Roster::setclassRosterVector(){
     "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY", 
     "A5,Joshua,Groeschl,jgroesc@wgu.edu.com,27,7,7,30,SOFTWARE"
     };
-
-  Student student();
 };
