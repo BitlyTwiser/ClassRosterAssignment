@@ -6,7 +6,7 @@ using namespace std;
 void printMyData() {
   string courseTitle = "Course Title: Scripting and Programming - Applications – C867\t";
   string myName = "Student Name: Joshua Groeschl\t";
-  string myStudentId = "001133572\t";
+  string myStudentId = "Student Id: 001133572\t";
   string programmingLanguage = "Programming Language: c++";
 
   cout << courseTitle << myName << myStudentId << programmingLanguage << endl;
@@ -20,12 +20,12 @@ int main() {
   roster.printAll();
   roster.printInvalidEmails();
 
-  for (int i; i<roster.classRosterArray.size();i++){
+  for (int i; i<roster.classRosterVector.size();i++){
     //Do things
   }
 
   // //Loop through array and print out other things
-  // for (char *i: roster.classRosterArray){
+  // for (char *i: roster.classRosterVector){
   //   cout << *i << endl;
   //   roster.printAverageDaysInCourse(i);
   //   roster.printByDegreeProgram(DegreeProgram::SOFTWARE);
