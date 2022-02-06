@@ -5,9 +5,9 @@ using namespace std;
 
 void printMyData() {
   string courseTitle = "Course Title: Scripting and Programming - Applications – C867";
-  string myName = "Joshua Groeschl";
+  string myName = "Student Name: Joshua Groeschl";
   string myStudentId = "";
-  string programmingLanguage = "c++";
+  string programmingLanguage = "Programming Language: c++";
 
   cout << courseTitle << "\t" << myName << "\t" << myStudentId << "\t" << programmingLanguage << endl;
 };

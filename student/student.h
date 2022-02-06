@@ -16,7 +16,8 @@ class Student {
     string degreeProgram;
 
     Student(int age,vector<int> numOfDaysForCourseCompletion, string studentId, string firstName, string lastName, string emailAddress, string degreeProgram);
-
+    void print();
+    
     // Getters
     int getAge();
     vector<int> getNumOfDaysForCourseCompletion();
@@ -34,7 +35,6 @@ class Student {
     void setLastName(string ln);
     void setEmailAddress(string ea);
     void setDegreeProgram(string dp);
-    void print(string studentId);
 };
 
 #endif
