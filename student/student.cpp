@@ -1,63 +1,77 @@
 #include "student.h"
+#include <string> 
 
-  // Getters
-  int Student::getAge() {
-    return Student::age;
-  };
+using namespace std;
 
-  vector<int> Student::getNumOfDaysForCourseCompletion() {
-    return Student::numOfDaysForCourseCompletion;
-  };
+// Getters
+int Student::getAge() {
+  return Student::age;
+};
 
-  string Student::getStudentId() {
-    return Student::studentId;
-  };
+vector<int> Student::getNumOfDaysForCourseCompletion() {
+  return Student::numOfDaysForCourseCompletion;
+};
 
-  string Student::getFirstName() {
-    return Student::firstName;
-  };
+string Student::getStudentId() {
+  return Student::studentId;
+};
 
-  string Student::getLastName() {
-    return Student::lastName;
-  };
+string Student::getFirstName() {
+  return Student::firstName;
+};
 
-  string Student::getEmailAddress() {
-    return Student::emailAddress;
-  };
+string Student::getLastName() {
+  return Student::lastName;
+};
 
-  string Student::getDegreeProgram() {
-    return Student::degreeProgram;
-  };
+string Student::getEmailAddress() {
+  return Student::emailAddress;
+};
 
-  // Mutators
-  void Student::setAge(int age) {
-    Student::age = age;
-  };
+string Student::getDegreeProgram() {
+  return Student::degreeProgram;
+};
 
-  void Student::setNumOfDaysForCourseCompletion(vector<int> days) {
-    Student::numOfDaysForCourseCompletion = days;
-  };
+// Mutators
+void Student::setAge(int age) {
+  Student::age = age;
+};
 
-  void Student::setStudentId(string sid) {
-    Student::studentId = sid;
-  };
+void Student::setNumOfDaysForCourseCompletion(vector<int> days) {
+  Student::numOfDaysForCourseCompletion = days;
+};
 
-  void Student::setFirstName(string fn) {
-    Student::firstName = fn;
-  };
+void Student::setStudentId(string sid) {
+  Student::studentId = sid;
+};
 
-  void Student::setLastName(string ln) {
-    Student::lastName = ln;
-  };
+void Student::setFirstName(string fn) {
+  Student::firstName = fn;
+};
 
-  void Student::setEmailAddress(string ea) {
-    Student::emailAddress = ea;
-  };
+void Student::setLastName(string ln) {
+  Student::lastName = ln;
+};
 
-  void Student::setDegreeProgram(string dp) {
-    Student::degreeProgram = dp;
-  };
+void Student::setEmailAddress(string ea) {
+  Student::emailAddress = ea;
+};
 
-  void Student::print() {
-    cout << "Student Id: " << Student::studentId << "" << endl;
-  };
+void Student::setDegreeProgram(string dp) {
+  Student::degreeProgram = dp;
+};
+
+//Helper method
+string returnNumberOfDaysAsAsString(vector<int> numOfDays){
+  string numberOfDaysArray = "";
+
+  for(int i=0;i<numOfDays.size();i++){
+    numberOfDaysArray.append(to_string(numOfDays.at(i)));
+  }
+
+  return numberOfDaysArray;
+}
+
+void Student::print() {
+  cout << "Student Id:\t" << Student::studentId << "First Name:\t" << Student::firstName << "Last Name:\t" << Student::lastName << "Email:\t" << Student::emailAddress << "Age:\t" << Student::age << "Days in course:\t" << returnNumberOfDaysAsAsString(Student::numOfDaysForCourseCompletion) << "Degree Program:\t" << Student::degreeProgram << endl;
+};

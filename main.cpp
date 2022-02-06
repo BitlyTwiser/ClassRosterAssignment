@@ -4,12 +4,12 @@
 using namespace std;
 
 void printMyData() {
-  string courseTitle = "Course Title: Scripting and Programming - Applications – C867";
-  string myName = "Student Name: Joshua Groeschl";
-  string myStudentId = "";
+  string courseTitle = "Course Title: Scripting and Programming - Applications – C867\t";
+  string myName = "Student Name: Joshua Groeschl\t";
+  string myStudentId = "001133572\t";
   string programmingLanguage = "Programming Language: c++";
 
-  cout << courseTitle << "\t" << myName << "\t" << myStudentId << "\t" << programmingLanguage << endl;
+  cout << courseTitle << myName << myStudentId << programmingLanguage << endl;
 };
 
 int main() {
