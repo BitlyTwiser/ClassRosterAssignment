@@ -19,5 +19,5 @@ void Roster::printInvalidEmails() {
 };
 
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
-  
+
 };

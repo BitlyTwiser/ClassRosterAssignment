@@ -6,10 +6,9 @@
 class Roster 
 {
 	public:
-	  // Vector of pointers used instead of array of pointers.
 		vector<char*> classRosterArray;
-		Roster();
-		~Roster();
+		Roster(){};
+		~Roster(){};
 		void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
 		void remove(string studentId);
 		void printAll();
