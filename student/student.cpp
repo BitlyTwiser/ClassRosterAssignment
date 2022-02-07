@@ -28,7 +28,7 @@ string Student::getEmailAddress() {
   return Student::emailAddress;
 };
 
-string Student::getDegreeProgram() {
+DegreeProgram Student::getDegreeProgram() {
   return Student::degreeProgram;
 };
 
@@ -57,7 +57,7 @@ void Student::setEmailAddress(string ea) {
   Student::emailAddress = ea;
 };
 
-void Student::setDegreeProgram(string dp) {
+void Student::setDegreeProgram(DegreeProgram dp) {
   Student::degreeProgram = dp;
 };
 

@@ -1,4 +1,4 @@
-#include "roster/roster.cpp"
+#include "roster/roster.h"
 #include <iostream>
 
 using namespace std;
@@ -17,12 +17,12 @@ int main() {
 
   printMyData();
 
-  roster.printAll();
-  roster.printInvalidEmails();
+  // roster.printAll();
+  // roster.printInvalidEmails();
 
-  for (int i; i<roster.classRosterVector.size();i++){
-    //Do things
-  }
+  // for (int i; i<roster.classRosterVector.size();i++){
+  //   //Do things
+  // }
 
   // //Loop through array and print out other things
   // for (char *i: roster.classRosterVector){

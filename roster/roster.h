@@ -8,6 +8,14 @@ class Roster
 {
 	public:
 		vector<Student*> classRosterVector;
+		void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
+		void remove(string studentId);
+		void printAll();
+		void printAverageDaysInCourse(string studentId);
+		void printInvalidEmails();
+		void printByDegreeProgram(DegreeProgram degreeProgram);
+		void setclassRosterVector();
+
 		Roster(){
 			setclassRosterVector();
 		};
@@ -17,13 +25,6 @@ class Roster
 				delete classRosterVector[i];
 			}
 		};
-		void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
-		void remove(string studentId);
-		void printAll();
-		void printAverageDaysInCourse(string studentId);
-		void printInvalidEmails();
-		void printByDegreeProgram(DegreeProgram degreeProgram);
-		void setclassRosterVector();
 };
 
 #endif

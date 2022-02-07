@@ -1,7 +1,31 @@
 #include "roster.h"
 #include "../student/student.h"
 
-void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {};
+//Helper methods
+bool invalidEmailAddress(string emailAddress){
+  //Parse email string and determine if its missing the @ or the .
+  return false;
+};
+
+vector<int> convertNumOfDaysToVectorOfInts(int numDays1, int numDays2, int numDays3 ){
+  vector<int> returnVector;
+  returnVector.insert(returnVector.end(), { numDays1, numDays2, numDays3 });
+
+  return returnVector;
+};
+
+void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
+  
+  Student student(
+    age,
+    convertNumOfDaysToVectorOfInts(daysInCourse1, daysInCourse2, daysInCourse3),
+    studentID,
+    firstName,
+    lastName,
+    emailAddress,
+    degreeprogram
+  );
+};
 
 void Roster::remove(string studentId) {
 
@@ -33,4 +57,7 @@ void Roster::setclassRosterVector(){
     "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY", 
     "A5,Joshua,Groeschl,jgroesc@wgu.edu.com,27,7,7,30,SOFTWARE"
     };
+
+    cout << studentData << endl;
 };
+

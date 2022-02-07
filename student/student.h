@@ -2,6 +2,7 @@
 #define student_h
 #include <vector>
 #include <iostream>
+#include "../degree.h"
 
 using namespace std;
 
@@ -13,9 +14,8 @@ class Student {
     string firstName;
     string lastName;
     string emailAddress;
-    string degreeProgram;
+    DegreeProgram degreeProgram;
 
-    Student(int age,vector<int> numOfDaysForCourseCompletion, string studentId, string firstName, string lastName, string emailAddress, string degreeProgram);
     void print();
     
     // Getters
@@ -25,7 +25,7 @@ class Student {
     string getFirstName();
     string getLastName();
     string getEmailAddress();
-    string getDegreeProgram();
+    DegreeProgram getDegreeProgram();
 
     // Mutators
     void setAge(int age);
@@ -34,7 +34,15 @@ class Student {
     void setFirstName(string fn);
     void setLastName(string ln);
     void setEmailAddress(string ea);
-    void setDegreeProgram(string dp);
-};
+    void setDegreeProgram(DegreeProgram dp);
 
+    Student(
+      int age, 
+      vector<int> numOfDaysForCourseCompletion, 
+      string studentId, 
+      string firstName, 
+      string lastName, 
+      string emailAddress, 
+      DegreeProgram degreeProgram){};
+};
 #endif
