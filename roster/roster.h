@@ -15,6 +15,7 @@ class Roster
 		void printInvalidEmails();
 		void printByDegreeProgram(DegreeProgram degreeProgram);
 		void setclassRosterVector();
+		void callAddFunctionAndSetData(vector<string> data);
 
 		Roster(){
 			setclassRosterVector();

@@ -20,8 +20,9 @@ vector<int> convertNumOfDaysToVectorOfInts(int numDays1, int numDays2, int numDa
   return returnVector;
 };
 
+// End helpers
+
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
-  
   Student student(
     age,
     convertNumOfDaysToVectorOfInts(daysInCourse1, daysInCourse2, daysInCourse3),
@@ -31,6 +32,7 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
     emailAddress,
     degreeprogram
   );
+  student.print();
 };
 
 void Roster::remove(string studentId) {
@@ -66,23 +68,21 @@ DegreeProgram returnDegreeProgram(string degreeProgram){
   }
 };
 
-void callAddFunctionAndSetData(vector<string> data){
-  cout << data.at(0) << endl;
-  cout << data.at(1) << endl;
-  cout << data.at(2) << endl;
-  cout << data.at(3) << endl;
-  cout << data.at(4) << endl;
-  cout << data.at(5) << endl;
-  cout << data.at(6) << endl;
-  cout << data.at(7) << endl;
-  cout << data.at(8) << endl;
+void Roster::callAddFunctionAndSetData(vector<string> data){
+  string studentId = data.at(0);
+  string firstName = data.at(1);
+  string lastName = data.at(2);
+  string emailAddress = data.at(3);
+  int age = stoi(data.at(4));
+  int daysInCourse1 = stoi(data.at(5));
+  int daysInCourse2 = stoi(data.at(6));
+  int daysInCourse3 = stoi(data.at(7));
+  DegreeProgram degreeProgram = returnDegreeProgram(data.at(8));
+  
+  Roster::add(studentId, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
 };
 
 void Roster::setclassRosterVector(){
-  string delimiter = ",";
-  size_t pos = 0;
-  string token;
-
   const string studentData[] = {
     "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY", 
     "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK", 
