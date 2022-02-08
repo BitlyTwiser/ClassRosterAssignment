@@ -44,12 +44,13 @@ class Student {
       string lastName, 
       string emailAddress, 
       DegreeProgram degreeProgram){
-        age = age;
-        numOfDaysForCourseCompletion = numOfDaysForCourseCompletion;
-        firstName = firstName;
-        lastName = lastName;
-        emailAddress = emailAddress;
-        degreeProgram = degreeProgram;
+        setAge(age);
+        setNumOfDaysForCourseCompletion(numOfDaysForCourseCompletion);
+        setStudentId(studentId);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmailAddress(emailAddress);
+        setDegreeProgram(degreeProgram);
       };
 };
 #endif
