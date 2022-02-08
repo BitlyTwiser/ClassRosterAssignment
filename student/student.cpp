@@ -73,5 +73,6 @@ string returnNumberOfDaysAsAsString(vector<int> numOfDays){
 }
 
 void Student::print() {
+  cout << "Printing from Student" << endl;
   cout << "Student Id:\t" << Student::studentId << "First Name:\t" << Student::firstName << "Last Name:\t" << Student::lastName << "Email:\t" << Student::emailAddress << "Age:\t" << Student::age << "Days in course:\t" << returnNumberOfDaysAsAsString(Student::numOfDaysForCourseCompletion) << "Degree Program:\t" << Student::degreeProgram << endl;
 };

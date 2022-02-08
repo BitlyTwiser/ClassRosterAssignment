@@ -13,12 +13,13 @@ void printMyData() {
 };
 
 int main() {
-  Roster roster;
-
   printMyData();
 
-  // roster.printAll();
-  // roster.printInvalidEmails();
+  // Constructor will set classRoster with all student data.
+  Roster classRoster;
+
+  classRoster.printAll();
+  classRoster.printInvalidEmails();
 
   // for (int i; i<roster.classRosterVector.size();i++){
   //   //Do things

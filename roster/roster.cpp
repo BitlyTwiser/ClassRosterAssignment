@@ -1,3 +1,5 @@
+#include <cstring>  
+#include <map>
 #include "roster.h"
 #include "../student/student.h"
 
@@ -42,6 +44,7 @@ void Roster::printAverageDaysInCourse(string studentId) {
 };
 
 void Roster::printInvalidEmails() {
+  cout << "Invalid Emails" << endl;
 
 };
 
@@ -49,7 +52,26 @@ void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
 
 };
 
+DegreeProgram returnDegreeProgram(string degreeProgram){
+  if(degreeProgram == "SECURITY") {
+    return DegreeProgram::SECURITY;
+  } else if (degreeProgram == "NETWORK") {
+    return DegreeProgram::NETWORK;
+  } else {
+    return DegreeProgram::SOFTWARE;
+  }
+};
+
+void callAddFunctionAndSetData(vector<string> data){
+  cout << "inside\r\n" << endl;
+  cout << data.at(0);
+};
+
 void Roster::setclassRosterVector(){
+  string delimiter = ",";
+  size_t pos = 0;
+  string token;
+
   const string studentData[] = {
     "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY", 
     "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK", 
@@ -58,6 +80,15 @@ void Roster::setclassRosterVector(){
     "A5,Joshua,Groeschl,jgroesc@wgu.edu.com,27,7,7,30,SOFTWARE"
     };
 
-    cout << studentData << endl;
+    for (string student : studentData){
+      vector<string> innerTokens;
+
+      while ((pos = student.find(delimiter)) != string::npos) {
+        token = student.substr(0, pos);
+        innerTokens.push_back(token);
+        student.erase(0, pos + delimiter.length());
+      }
+      callAddFunctionAndSetData(innerTokens);
+    }
 };
 
