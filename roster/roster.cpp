@@ -1,3 +1,7 @@
+#include <vector>
+#include <string>
+#include <sstream>
+#include <iostream>
 #include <cstring>  
 #include <map>
 #include "roster.h"
@@ -63,8 +67,15 @@ DegreeProgram returnDegreeProgram(string degreeProgram){
 };
 
 void callAddFunctionAndSetData(vector<string> data){
-  cout << "inside\r\n" << endl;
-  cout << data.at(0);
+  cout << data.at(0) << endl;
+  cout << data.at(1) << endl;
+  cout << data.at(2) << endl;
+  cout << data.at(3) << endl;
+  cout << data.at(4) << endl;
+  cout << data.at(5) << endl;
+  cout << data.at(6) << endl;
+  cout << data.at(7) << endl;
+  cout << data.at(8) << endl;
 };
 
 void Roster::setclassRosterVector(){
@@ -78,15 +89,17 @@ void Roster::setclassRosterVector(){
     "A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE", 
     "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY", 
     "A5,Joshua,Groeschl,jgroesc@wgu.edu.com,27,7,7,30,SOFTWARE"
-    };
+    };    
 
     for (string student : studentData){
       vector<string> innerTokens;
 
-      while ((pos = student.find(delimiter)) != string::npos) {
-        token = student.substr(0, pos);
-        innerTokens.push_back(token);
-        student.erase(0, pos + delimiter.length());
+      stringstream sstr(student);      
+      while(sstr.good())
+      {
+          string substr;
+          getline(sstr, substr, ',');
+          innerTokens.push_back(substr);
       }
       callAddFunctionAndSetData(innerTokens);
     }
