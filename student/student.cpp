@@ -76,6 +76,17 @@ string returnNumberOfDaysAsAsString(vector<int> numOfDays){
   return numberOfDaysArray.append(" }");
 }
 
+inline const char* EnumToString(DegreeProgram v)
+{
+  switch (v)
+  {
+    case SECURITY:   return "SECURITY";
+    case NETWORK:   return "NETWORK";
+    case SOFTWARE: return "SOFTWARE";
+    default: return "UNKNOWN";
+  }
+}
+
 void Student::print() {
-  cout << "Student Id: " << Student::getStudentId() << "\t" << "First Name: " << Student::getFirstName() << "\t" << "Last Name: " << Student::getLastName() << "\t" << "Email: " << Student::getEmailAddress() << "\t" << "Age: " << "\t" << Student::getAge() << "\t" << "daysInCourse: " << returnNumberOfDaysAsAsString(Student::getNumOfDaysForCourseCompletion()) << "\t" << "Degree Program: " << Student::getDegreeProgram() << endl;
+  cout << "Student Id: " << Student::getStudentId() << "\t" << "First Name: " << Student::getFirstName() << "\t" << "Last Name: " << Student::getLastName() << "\t" << "Email: " << Student::getEmailAddress() << "\t" << "Age: " << "\t" << Student::getAge() << "\t" << "daysInCourse: " << returnNumberOfDaysAsAsString(Student::getNumOfDaysForCourseCompletion()) << "\t" << "Degree Program: " << EnumToString(Student::getDegreeProgram()) << endl;
 };
