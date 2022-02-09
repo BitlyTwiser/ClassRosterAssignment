@@ -15,26 +15,21 @@ void printMyData() {
 int main() {
   printMyData();
 
-  // Constructor will set classRoster with all student data.
+  // Constructor of Roster class object will set classRoster with pointers to each item in the student data table.
   Roster classRoster;
 
   classRoster.printAll();
   classRoster.printInvalidEmails();
 
-  // for (int i; i<roster.classRosterVector.size();i++){
-  //   //Do things
-  // }
+  for (int i = 0; i<classRoster.classRosterVector.size();i++){
+    Student* curStudent = classRoster.classRosterVector[i];
 
-  // //Loop through array and print out other things
-  // for (char *i: roster.classRosterVector){
-  //   cout << *i << endl;
-  //   roster.printAverageDaysInCourse(i);
-  //   roster.printByDegreeProgram(DegreeProgram::SOFTWARE);
-  //   roster.remove("A3");
-  //   roster.printAll();
-  //   roster.remove("A3");
-  // //expected: the above line should print a message saying such a student with this ID was not found.
-  // }
+    classRoster.printAverageDaysInCourse(curStudent->getStudentId());
+    classRoster.printByDegreeProgram(DegreeProgram::SOFTWARE);
+    classRoster.remove("A3");
+    classRoster.printAll();
+    classRoster.remove("A3");
+  }
 
   return 1;
 }
