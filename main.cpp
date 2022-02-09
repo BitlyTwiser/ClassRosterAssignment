@@ -25,11 +25,12 @@ int main() {
     Student* curStudent = classRoster.classRosterVector[i];
 
     classRoster.printAverageDaysInCourse(curStudent->getStudentId());
-    classRoster.printByDegreeProgram(DegreeProgram::SOFTWARE);
-    classRoster.remove("A3");
-    classRoster.printAll();
-    classRoster.remove("A3");
   }
+
+  classRoster.printByDegreeProgram(DegreeProgram::SOFTWARE);
+  classRoster.remove("A3");
+  classRoster.printAll();
+  classRoster.remove("A3");
 
   return 1;
 }
