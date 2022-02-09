@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
 #include <sstream>
+#include <algorithm>
 #include <iostream>
 #include <cstring>  
 #include "roster.h"
@@ -38,7 +39,7 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 };
 
 void Roster::remove(string studentId) {
-
+  
 };
 
 void Roster::printAll() {
@@ -48,7 +49,8 @@ void Roster::printAll() {
 };
 
 void Roster::printAverageDaysInCourse(string studentId) {
-
+  vector<Student*>::iterator it = find_if(classRosterVector.begin(), classRosterVector.end(), [studentId](Student* student){ return (student->getStudentId() == studentId); });
+  cout << (*it)->getStudentId() << endl;
 };
 
 void Roster::printInvalidEmails() {
