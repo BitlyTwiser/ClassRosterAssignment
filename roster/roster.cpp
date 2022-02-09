@@ -3,9 +3,9 @@
 #include <sstream>
 #include <iostream>
 #include <cstring>  
-#include <map>
 #include "roster.h"
 #include "../student/student.h"
+#include <regex>
 
 //Helper methods
 bool invalidEmailAddress(string emailAddress){
@@ -23,7 +23,7 @@ vector<int> convertNumOfDaysToVectorOfInts(int numDays1, int numDays2, int numDa
 // End helpers
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
-  Student student(
+  Roster::classRosterVector.push_back(new Student(
     age,
     convertNumOfDaysToVectorOfInts(daysInCourse1, daysInCourse2, daysInCourse3),
     studentID,
@@ -31,8 +31,7 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
     lastName,
     emailAddress,
     degreeprogram
-  );
-  student.print();
+  ));
 };
 
 void Roster::remove(string studentId) {
@@ -40,8 +39,8 @@ void Roster::remove(string studentId) {
 };
 
 void Roster::printAll() {
-  for(int i = 0;i<Roster::classRosterVector.size();i++){
-    classRosterVector[i]->print();
+  for(int i = 0;i<classRosterVector.size();i++){
+      classRosterVector[i]->print();
   }
 };
 

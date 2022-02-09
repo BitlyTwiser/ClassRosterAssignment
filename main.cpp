@@ -7,7 +7,7 @@ void printMyData() {
   string courseTitle = "Course Title: Scripting and Programming - Applications – C867\t";
   string myName = "Student Name: Joshua Groeschl\t";
   string myStudentId = "Student Id: 001133572\t";
-  string programmingLanguage = "Programming Language: c++";
+  string programmingLanguage = "Programming Language: c++\r\n";
 
   cout << courseTitle << myName << myStudentId << programmingLanguage << endl;
 };
