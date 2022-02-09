@@ -63,13 +63,17 @@ void Student::setDegreeProgram(DegreeProgram dp) {
 
 //Helper method
 string returnNumberOfDaysAsAsString(vector<int> numOfDays){
-  string numberOfDaysArray = "";
+  string numberOfDaysArray = "{ ";
 
   for(int i=0;i<numOfDays.size();i++){
-    numberOfDaysArray.append(to_string(numOfDays.at(i)));
+    if(i == (numOfDays.size() - 1)){
+      numberOfDaysArray.append(to_string(numOfDays.at(i)));  
+    } else {
+      numberOfDaysArray.append(to_string(numOfDays.at(i)) + ",");
+    }
   }
 
-  return numberOfDaysArray;
+  return numberOfDaysArray.append(" }");
 }
 
 void Student::print() {
