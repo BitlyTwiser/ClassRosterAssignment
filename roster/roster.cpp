@@ -58,7 +58,7 @@ void Roster::printAverageDaysInCourse(string studentId) {
     averageNumOfDays += numOfDays[i];
   }
 
-  cout << (averageNumOfDays/3) << endl;
+  cout << "Average days spent: " << (averageNumOfDays/numOfDays.size()) << endl;
 };
 
 void Roster::printInvalidEmails() {
@@ -71,7 +71,11 @@ void Roster::printInvalidEmails() {
 };
 
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
-
+  for(int i = 0; i<classRosterVector.size();i++){
+    if(classRosterVector[i]->getDegreeProgram() == degreeProgram){
+      classRosterVector[i]->print();
+    }
+  }
 };
 
 DegreeProgram returnDegreeProgram(string degreeProgram){
