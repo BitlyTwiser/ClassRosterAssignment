@@ -49,18 +49,16 @@ void Roster::printAll() {
 };
 
 void Roster::printAverageDaysInCourse(string studentId) {
-  int averageNumOfDays;
+  int averageNumOfDays = 0;
 
   vector<Student*>::iterator it = find_if(classRosterVector.begin(), classRosterVector.end(), [studentId](Student* student){ return (student->getStudentId() == studentId); });
   vector<int> numOfDays = (*it)->getNumOfDaysForCourseCompletion();
 
   for( int i = 0; i<numOfDays.size();i++){
-    cout << numOfDays[i];
-    // averageNumOfDays += numOfDays[i];
-    // cout << averageNumOfDays << endl;
+    averageNumOfDays += numOfDays[i];
   }
 
-  cout << averageNumOfDays/3 << endl;
+  cout << (averageNumOfDays/3) << endl;
 };
 
 void Roster::printInvalidEmails() {
