@@ -9,7 +9,10 @@
 
 //Helper methods
 bool invalidEmailAddress(string emailAddress){
-  //Parse email string and determine if its missing the @ or the .
+  if(regex_match(emailAddress, regex("((^.*\\s.*))|(^(?:(?!@).)*$)|(^(?:(?!\\.).)*$)"))){
+    return true;
+  }
+  
   return false;
 };
 
@@ -49,8 +52,12 @@ void Roster::printAverageDaysInCourse(string studentId) {
 };
 
 void Roster::printInvalidEmails() {
-  cout << "Invalid Emails" << endl;
-
+    for(int i = 0;i<classRosterVector.size();i++){
+      string emailAddress = classRosterVector[i]->getEmailAddress();
+      if(invalidEmailAddress(emailAddress)){
+        cout << "Invalid Email Address: " << emailAddress << endl;
+      }
+  }
 };
 
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
