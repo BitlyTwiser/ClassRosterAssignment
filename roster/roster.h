@@ -7,23 +7,23 @@
 class Roster 
 {
 	public:
-		vector<Student*> classRosterVector;
+		vector<Student*> classRosterArray;
 		void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
 		void remove(string studentId);
 		void printAll();
 		void printAverageDaysInCourse(string studentId);
 		void printInvalidEmails();
 		void printByDegreeProgram(DegreeProgram degreeProgram);
-		void setclassRosterVector();
+		void setclassRosterArray();
 		void callAddFunctionAndSetData(vector<string> data);
 
 		Roster(){
-			setclassRosterVector();
+			setclassRosterArray();
 		};
 		~Roster(){
-			// Remove all elements from classRosterVector on deconstruction.
-			for(int i = 0; i< classRosterVector.size();i++){
-				delete classRosterVector[i];
+			// Remove all elements from classRosterArray on deconstruction.
+			for(int i = 0; i< classRosterArray.size();i++){
+				delete classRosterArray[i];
 			}
 		};
 };

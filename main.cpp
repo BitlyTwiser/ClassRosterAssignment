@@ -25,8 +25,8 @@ int main() {
   classRoster.printInvalidEmails();
 
   cout << "\nPrinting average days spent in course per student: \n" << endl;
-  for (int i = 0; i<classRoster.classRosterVector.size();i++){
-    Student* curStudent = classRoster.classRosterVector[i];
+  for (int i = 0; i<classRoster.classRosterArray.size();i++){
+    Student* curStudent = classRoster.classRosterArray[i];
     cout << "Student: " << curStudent->getFirstName() << " " << curStudent->getLastName() << endl;
     classRoster.printAverageDaysInCourse(curStudent->getStudentId());
   }

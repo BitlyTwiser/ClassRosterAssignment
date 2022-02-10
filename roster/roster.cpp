@@ -27,7 +27,7 @@ vector<int> convertNumOfDaysToVectorOfInts(int numDays1, int numDays2, int numDa
 // End helpers
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
-  Roster::classRosterVector.push_back(new Student(
+  Roster::classRosterArray.push_back(new Student(
     age,
     convertNumOfDaysToVectorOfInts(daysInCourse1, daysInCourse2, daysInCourse3),
     studentID,
@@ -39,25 +39,25 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 };
 
 void Roster::remove(string studentId) {
-  vector<Student*>::iterator it = find_if(classRosterVector.begin(), classRosterVector.end(), [studentId](Student* student){ return (student->getStudentId() == studentId); });
+  vector<Student*>::iterator it = find_if(classRosterArray.begin(), classRosterArray.end(), [studentId](Student* student){ return (student->getStudentId() == studentId); });
   
   if((*it)->getStudentId() != studentId){
     cout << "\nStudent ID: " << studentId << " was not found";
   } else {
-    classRosterVector.erase(it);
+    classRosterArray.erase(it);
   }
 };
 
 void Roster::printAll() {
-  for(int i = 0;i<classRosterVector.size();i++){
-      classRosterVector[i]->print();
+  for(int i = 0;i<classRosterArray.size();i++){
+      classRosterArray[i]->print();
   }
 };
 
 void Roster::printAverageDaysInCourse(string studentId) {
   int averageNumOfDays = 0;
 
-  vector<Student*>::iterator it = find_if(classRosterVector.begin(), classRosterVector.end(), [studentId](Student* student){ return (student->getStudentId() == studentId); });
+  vector<Student*>::iterator it = find_if(classRosterArray.begin(), classRosterArray.end(), [studentId](Student* student){ return (student->getStudentId() == studentId); });
   vector<int> numOfDays = (*it)->getNumOfDaysForCourseCompletion();
 
   for( int i = 0; i<numOfDays.size();i++){
@@ -68,8 +68,8 @@ void Roster::printAverageDaysInCourse(string studentId) {
 };
 
 void Roster::printInvalidEmails() {
-    for(int i = 0;i<classRosterVector.size();i++){
-      string emailAddress = classRosterVector[i]->getEmailAddress();
+    for(int i = 0;i<classRosterArray.size();i++){
+      string emailAddress = classRosterArray[i]->getEmailAddress();
       if(invalidEmailAddress(emailAddress)){
         cout << "Invalid Email Address: " << emailAddress << endl;
       }
@@ -77,9 +77,9 @@ void Roster::printInvalidEmails() {
 };
 
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
-  for(int i = 0; i<classRosterVector.size();i++){
-    if(classRosterVector[i]->getDegreeProgram() == degreeProgram){
-      classRosterVector[i]->print();
+  for(int i = 0; i<classRosterArray.size();i++){
+    if(classRosterArray[i]->getDegreeProgram() == degreeProgram){
+      classRosterArray[i]->print();
     }
   }
 };
@@ -108,7 +108,7 @@ void Roster::callAddFunctionAndSetData(vector<string> data){
   Roster::add(studentId, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
 };
 
-void Roster::setclassRosterVector(){
+void Roster::setclassRosterArray(){
   const string studentData[] = {
     "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY", 
     "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK", 
