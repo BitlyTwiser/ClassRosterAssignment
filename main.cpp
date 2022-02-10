@@ -1,6 +1,18 @@
 #include "roster/roster.h"
 #include <iostream>
 
+/* Notes:
+  I did add a few quick notes to the README.MD.
+  I also added a few lines between the output t odeliniate the different parts of the program for easier review. I hope this is acceptable.
+
+  Constructor of Roster class object will execute setclassRosterArray method.
+  The method will parse the studentArray and set the classRosterArray with pointers to each Student objects created from the student data table.
+
+  I apprciate whomever it is that takes the time to read this! It was most fun writing the c++ code here, I am open to any feedback! 
+
+  Thank you!
+*/
+
 using namespace std;
 
 void printMyData() {
@@ -15,7 +27,7 @@ void printMyData() {
 int main() {
   printMyData();
 
-  // Constructor of Roster class object will set classRoster with pointers to each item in the student data table.
+  // The Constructor of Roster class (as noted above) object will execute setclassRosterArray method to insert all requested objects into classRosterArray.
   Roster classRoster;
 
   cout << "Printing all student data:" << endl;
